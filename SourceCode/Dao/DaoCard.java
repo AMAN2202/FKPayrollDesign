@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * implements database crud operation for card i.e Sales_card and Work_card
+ */
 public class DaoCard {
 
 
@@ -25,7 +28,12 @@ public class DaoCard {
     static Statement statement;
     static ResultSet resultSet;
 
-
+    /**
+     *
+     * @param id  Employee id for which you want active cards that haven't been processed
+     * @param card_type  0 or 1 0 means Work_card and 1 means Saels_card
+     * @return List<Card> that have't been used for payement i.e they are active
+     */
     public static List<Card> get_by_id(int id,int card_type) {
         String card;
         switch (card_type){
@@ -39,7 +47,13 @@ public class DaoCard {
        return get_Cards(sql);
    
     }
-    
+
+    /**
+     *
+     * @param sql sql query that is to be exected on Work_card or Sales_card
+     * @return List<card> in accordance with query
+     *
+     */
     public static List<Card> get_Cards(String sql) {
         List<Card> list = new ArrayList<>();
         try {
@@ -69,7 +83,13 @@ public class DaoCard {
 
     }
 
-
+    /**
+     *
+     * @param p Card that is to be added
+     * @param id  employee id
+     * @param card_type 0/1 Work_card/Sales_card
+     * @throws ParseException if date can't be parsed
+     */
     public static void add(Card p, int id,int card_type) throws ParseException {
         String card;
         String h_or_amount;

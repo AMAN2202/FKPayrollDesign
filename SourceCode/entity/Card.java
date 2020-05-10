@@ -2,6 +2,10 @@ package entity;
 
 import java.util.Date;
 
+/**
+ * used for both Work_card and Sales_card
+ * value-> hour/amount
+ */
 public class Card {
     private Double value;
     private String date;
@@ -10,6 +14,8 @@ public class Card {
         this.value = value;
         this.date = date;
     }
+
+
 
     @Override
     public String toString() {

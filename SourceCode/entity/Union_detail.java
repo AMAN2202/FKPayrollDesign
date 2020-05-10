@@ -3,6 +3,9 @@ package entity;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Union_detail of employee
+ */
 public class Union_detail {
 
     private boolean union_member;

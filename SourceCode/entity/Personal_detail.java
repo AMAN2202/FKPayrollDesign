@@ -1,5 +1,8 @@
 package entity;
 
+/**
+ * Personal detail of employee such as name adress ...
+ */
 public class Personal_detail {
 
     private String name;

@@ -1,10 +1,13 @@
 package entity;
 
+/**
+ * Salaray details of an employee ...
+ */
 public class Salary_detail {
 
     private  double fixed_salary=100d;
     private  double sales_commission;
-    private  double hour_rate=500;
+    private  double hour_rate=500d;
 
     private  double salary_holded;
     private  double due=0d;

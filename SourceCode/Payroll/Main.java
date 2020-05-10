@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Print list of all active employee
+     */
     public static void get_all_Emp()
     {
         List<Emp> list=new ArrayList<>();
@@ -24,6 +27,10 @@ public class Main {
         }
     }
 
+    /**
+     * Add an employee
+     * prompt user for employee details
+     */
     public static void addEmp() {
 
         Emp e = new Emp();
@@ -58,6 +65,10 @@ public class Main {
 
 
     }
+
+    /**
+     * Finds user by email then update his personal detail
+     */
     public static  void update_personal_detail()
     {
         Scanner sc=new Scanner(System.in);

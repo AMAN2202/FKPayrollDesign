@@ -9,6 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Salary_detail crud operation
+ */
 public class DaoSalary_detail {
     static final private String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final private String DB_URL = "jdbc:mysql://localhost/db";
@@ -18,7 +21,11 @@ public class DaoSalary_detail {
     static Statement statement;
     static ResultSet resultSet;
 
-
+    /**
+     *
+     * @param id Employee id
+     * @return Salary_detail object
+     */
     public static Salary_detail get_by_id(int id) {
 
         String sql = "SELECT *  FROM Salary_detail where id=" + id;
@@ -27,7 +34,11 @@ public class DaoSalary_detail {
         return list.get(0);
     }
 
-
+    /**
+     *
+     * Don't use
+     *
+     */
     public static List<Salary_detail> get_Salary_detail(String sql) {
         List<Salary_detail> list = new ArrayList<>();
         try {
@@ -57,7 +68,12 @@ public class DaoSalary_detail {
 
     }
 
-
+    /**
+     *
+     * @param s Salay_detail of employee to be added
+     * @param id employee id
+     * Adds it to Salary_detail
+     */
     public static void add(Salary_detail s, int id) {
         String sql = String.format("insert into Salary_detail values(%.2f,%.2f,%.2f,%.2f,%.2f,'%s','%s',%d,%d)", s.getFixed_salary(), s.getSales_commission(), s.getHour_rate(), s.getSalary_holded(), s.getDue(), s.getAccount_number(), s.getPostal_address(), s.getDefault_payment_mode(), id);
         System.out.println(sql);
@@ -85,6 +101,10 @@ public class DaoSalary_detail {
 
     }
 
+    /**
+     *
+     * @param id Employee id whose salary detail is to be deleted
+     */
     public static void delete(int id) {
         String sql = String.format("delete from Salary_detail where id=%d", id);
         System.out.println(sql);
@@ -112,6 +132,11 @@ public class DaoSalary_detail {
 
     }
 
+    /**
+     *
+     * @param p Personal_detail of employee
+     * @param id Employee id
+     */
     public static void update(Salary_detail p, int id) {
         delete(id);
         add(p, id);

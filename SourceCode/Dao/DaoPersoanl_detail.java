@@ -9,6 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Implement database crud operations for Persoanl_detail of Employee
+ */
 public class DaoPersoanl_detail {
 
     static final private String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -20,6 +23,11 @@ public class DaoPersoanl_detail {
     static ResultSet resultSet;
 
 
+    /**
+     *
+     * @param id employee id
+     * @return Personal_detail object of an employee having that id
+     */
     public static Personal_detail get_by_id(int id) {
 
         String sql = "SELECT *  FROM Personal_detail where id=" + id;
@@ -28,6 +36,12 @@ public class DaoPersoanl_detail {
         return list.get(0);
     }
 
+
+    /**
+     *
+     * @param phoneno  phoneno of employee
+     * @return  Personal_detail object of an employee having that phoneno
+     */
     public static Personal_detail get_by_phoneno(String phoneno) {
 
         String sql = String.format("SELECT *  FROM Personal_detail where phoneno='%s'", phoneno);
@@ -36,6 +50,7 @@ public class DaoPersoanl_detail {
         return list.get(0);
 
     }
+
 
     public static List<Personal_detail> get_personal_detail(String sql) {
         List<Personal_detail> list = new ArrayList<>();
@@ -66,13 +81,17 @@ public class DaoPersoanl_detail {
 
     }
 
-
+    /**
+     *
+     * @param p Personal_detail object that is to be stored
+     * @param id employee id
+     */
     public static void add(Personal_detail p, int id) {
         String sql = String.format("insert into Personal_detail(id,name,address,phoneno) values(%d,'%s','%s','%s')", id, p.getName(), p.getAddress(), p.getPhoneno());
         System.out.println(sql);
 
         try {
-            // load driver and get connection
+
             Class.forName(JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
             statement = connection.createStatement();
@@ -94,8 +113,13 @@ public class DaoPersoanl_detail {
 
     }
 
-    public static void delete(Personal_detail p) {
-        String sql = String.format("delete from Personal_detail where phoneno='%s'", p.getPhoneno());
+    /**
+     *
+     * @param id   id of employee to whose personal detail is to be deleted
+     */
+
+    public static void delete(int id) {
+        String sql = String.format("delete from Personal_detail where id=%d", id);
         System.out.println(sql);
 
         try {
@@ -121,6 +145,11 @@ public class DaoPersoanl_detail {
 
     }
 
+    /**
+     *
+     * @param p Personal_detail object
+     * @param id id of Employee
+     */
     public static void update(Personal_detail p, int id) {
         String sql = String.format("update Personal_detail  set  phoneno='%s',address='%s' where id=%d", p.getPhoneno(), p.getAddress(), id);
         System.out.println(sql);

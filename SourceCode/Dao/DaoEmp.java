@@ -9,6 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * implements crud operation for Emp
+ */
 public class DaoEmp {
     static final private String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final private String DB_URL = "jdbc:mysql://localhost/db";
@@ -18,10 +21,12 @@ public class DaoEmp {
     static Statement statement;
     static ResultSet resultSet;
 
-    /*
-        @param int id of Employee
-         @return Emp employee having that id
-    */
+
+    /**
+     *
+     * @param id id of Employee
+     * @return Emp employee having that id
+     */
     public static Emp get_by_id(int id) {
 
         String sql = "SELECT *  FROM Emp where id=" + id;
@@ -30,10 +35,13 @@ public class DaoEmp {
         return list.get(0);
     }
 
-    /*
-        @param String email id of Employee
-        @return Emp employee having that email
-    */
+
+
+    /**
+     *
+     * @param email String email id of Employee
+     * @return  Emp employee having that email
+     */
     public static Emp get_by_email(String email) {
 
         String sql = "SELECT *  FROM Emp where email=" + email;
@@ -42,9 +50,11 @@ public class DaoEmp {
         return list.get(0);
     }
 
-    /*
-        @return ArrayList<Emp>  all employee from database
-    */
+
+    /**
+     *
+     * @return ArrayList<Emp>  all employee from database
+     */
 
     public static List<Emp> get_all() {
 
@@ -53,10 +63,12 @@ public class DaoEmp {
         return list;
     }
 
-    /*
-        @param String sql query to be exected and must execute on Emp table
-        @return ArrayList<Emp>   employee from database by executing sql
-    */
+
+    /**
+     *
+     * @param sql String sql query to be exected and must execute on Emp table
+     * @return  employee from database by executing sql
+     */
     public static List<Emp> get_Emp(String sql) {
         List<Emp> list = new ArrayList<>();
         try {
@@ -91,11 +103,12 @@ public class DaoEmp {
 
     }
 
-    /*
 
-        @return int
-        returns the (maximum id in Emp table)+1 or -1 if it faails
-    */
+
+    /**
+     *
+     * @return  returns the (maximum id in Emp table)+1 or -1 if it faails
+     */
     public static int get_max_id() {
         int id2 = 0;
         try {
@@ -132,10 +145,11 @@ public class DaoEmp {
     }
 
 
-    /*
-       @param Emp
-       Emp to be added in database
-    */
+
+    /**
+     *
+     * @param s  Emp to be added in database
+     */
     public static void add(Emp s) {
 
         String sql = String.format("insert into Emp values(%d,'%s',%b,'%s','%c')", s.getId(), s.getEmail(), s.isActive(), s.getPost(), s.getGender());
@@ -165,21 +179,24 @@ public class DaoEmp {
     }
 
 
-    /*
-       @param Emp
-       Emp to be deleted from database
-       only he is updated as inactive in database
 
-    */
+
+    /**
+     *
+     * @param s  Emp to be deleted from database
+     *        only he is updated as inactive in database
+     */
     public static void delete(Emp s) {
         s.setActive(false);
         update(s);
     }
 
-    /*
-   @param Emp
-   Emp to be upadated in database
-    */
+
+
+    /**
+     *
+     * @param p  Emp to be upadated in database
+     */
     public static void update(Emp p) {
         String sql = String.format("update Emp set active=%b,post='%s',email='%s' where id=%d", p.isActive(), p.getPost(), p.getId(), p.getEmail());
         System.out.println(sql);
@@ -207,9 +224,11 @@ public class DaoEmp {
     }
 
 
-    /*
-    @return ArrayList<Emp> all active employee from database
-    */
+
+    /**
+     *
+     * @return ArrayList<Emp> all active employee from database
+     */
     public List<Emp> getall() {
         String sql = "select * from Emp where active=1";
         return get_Emp(sql);

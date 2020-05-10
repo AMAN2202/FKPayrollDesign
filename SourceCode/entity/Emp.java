@@ -1,5 +1,8 @@
 package entity;
 
+/**
+ * Employee
+ */
 public class Emp {
 
     private int id;
