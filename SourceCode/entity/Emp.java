@@ -11,6 +11,7 @@ public class Emp {
     private char gender;
     private String post;
 
+
     public Emp() {
         this.active = true;
     }

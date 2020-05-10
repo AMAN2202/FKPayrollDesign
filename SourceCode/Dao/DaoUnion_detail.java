@@ -80,7 +80,7 @@ public class DaoUnion_detail {
      */
     public static void add(Union_detail p, int id) {
         String sql = String.format("insert into Union_detail values(%d,%b,%d,%d)", id, p.isUnion_member(), p.getCharges().get(0), p.getCharges().get(1));
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection
@@ -111,7 +111,7 @@ public class DaoUnion_detail {
      */
     public static void delete(int id) {
         String sql = String.format("delete from Union_detail where id=%d", id);
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection

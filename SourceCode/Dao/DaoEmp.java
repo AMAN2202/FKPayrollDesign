@@ -44,9 +44,11 @@ public class DaoEmp {
      */
     public static Emp get_by_email(String email) {
 
-        String sql = "SELECT *  FROM Emp where email=" + email;
+        String sql = String.format("SELECT *  FROM Emp where email='%s'",email);
         List<Emp> list = get_Emp(sql);
         assert (list.size() == 1);
+//        System.out.println(list.size());
+//        System.out.println(email);
         return list.get(0);
     }
 
@@ -153,7 +155,7 @@ public class DaoEmp {
     public static void add(Emp s) {
 
         String sql = String.format("insert into Emp values(%d,'%s',%b,'%s','%c')", s.getId(), s.getEmail(), s.isActive(), s.getPost(), s.getGender());
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection
@@ -199,7 +201,7 @@ public class DaoEmp {
      */
     public static void update(Emp p) {
         String sql = String.format("update Emp set active=%b,post='%s',email='%s' where id=%d", p.isActive(), p.getPost(), p.getId(), p.getEmail());
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection

@@ -101,11 +101,11 @@ public class DaoCard {
                 h_or_amount="amount";
                 break;
         }
-        System.out.println(h_or_amount);
+//        System.out.println(h_or_amount);
         Date utilDate = new SimpleDateFormat("yyyy-MM-dd").parse(p.getDate());
         java.sql.Date dd= new java.sql.Date(utilDate.getTime());
         String sql = String.format("insert into %s(id,%s,date,processed) values(%d,'%.2f','%s',%d)",card,h_or_amount,id,p.getValue(),dd,0);
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection

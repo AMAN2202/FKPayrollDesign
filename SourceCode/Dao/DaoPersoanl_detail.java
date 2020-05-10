@@ -88,7 +88,7 @@ public class DaoPersoanl_detail {
      */
     public static void add(Personal_detail p, int id) {
         String sql = String.format("insert into Personal_detail(id,name,address,phoneno) values(%d,'%s','%s','%s')", id, p.getName(), p.getAddress(), p.getPhoneno());
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
 
@@ -120,7 +120,7 @@ public class DaoPersoanl_detail {
 
     public static void delete(int id) {
         String sql = String.format("delete from Personal_detail where id=%d", id);
-        System.out.println(sql);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection
@@ -151,8 +151,8 @@ public class DaoPersoanl_detail {
      * @param id id of Employee
      */
     public static void update(Personal_detail p, int id) {
-        String sql = String.format("update Personal_detail  set  phoneno='%s',address='%s' where id=%d", p.getPhoneno(), p.getAddress(), id);
-        System.out.println(sql);
+        String sql = String.format("update Personal_detail  set name='%s', phoneno='%s',address='%s' where id=%d",p.getName(), p.getPhoneno(), p.getAddress(), id);
+//        System.out.println(sql);
 
         try {
             // load driver and get connection
