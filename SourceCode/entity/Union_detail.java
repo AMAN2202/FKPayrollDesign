@@ -1,15 +1,16 @@
 package entity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Union_detail {
 
     private boolean union_member;
-    private HashMap<String,Integer> charges;
+    private ArrayList<Integer> charges;
 
 
 
-    public Union_detail(boolean union_member, HashMap<String, Integer> charges) {
+    public Union_detail(boolean union_member, ArrayList<Integer> charges) {
         this.union_member = union_member;
         this.charges = charges;
     }
@@ -22,11 +23,12 @@ public class Union_detail {
         this.union_member = union_member;
     }
 
-    public HashMap<String, Integer> getCharges() {
+
+    public ArrayList<Integer> getCharges() {
         return charges;
     }
 
-    public void setCharges(HashMap<String, Integer> charges) {
+    public void setCharges(ArrayList<Integer> charges) {
         this.charges = charges;
     }
 }
