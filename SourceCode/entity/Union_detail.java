@@ -9,10 +9,18 @@ public class Union_detail {
     private ArrayList<Integer> charges;
 
 
+    public Union_detail() {
+        this.union_member=false;
+        this.charges=new ArrayList<Integer>();;
+        this.charges.add(10000);
+        this.charges.add(10000);
+
+    }
 
     public Union_detail(boolean union_member, ArrayList<Integer> charges) {
         this.union_member = union_member;
         this.charges = charges;
+
     }
 
     @Override

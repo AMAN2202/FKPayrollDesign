@@ -1,5 +1,6 @@
 package Dao;
 
+import com.mysql.cj.protocol.Resultset;
 import entity.Emp;
 
 import java.sql.Connection;
@@ -27,12 +28,21 @@ public class DaoEmp {
         return list.get(0);
     }
 
+    public static Emp get_by_email(String email) {
+
+        String sql = "SELECT *  FROM Emp where email=" + email;
+        List<Emp> list = get_Emp(sql);
+        assert (list.size() == 1);
+        return list.get(0);
+    }
+
     public static List<Emp> get_all() {
 
         String sql = "SELECT *  FROM Emp";
         List<Emp> list = get_Emp(sql);
         return list;
     }
+
 
     public static List<Emp> get_Emp(String sql) {
         List<Emp> list = new ArrayList<>();
@@ -68,6 +78,47 @@ public class DaoEmp {
         }
 
     }
+
+
+    public static int get_max_id() {
+        int id2 = 0;
+        try {
+            // load driver and get connection
+            Class.forName(JDBC_DRIVER);
+            connection = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
+            statement = connection.createStatement();
+
+
+            resultSet = statement.executeQuery("select max(id) from Emp");
+            if (resultSet.next()) {
+                id2 = resultSet.getInt(1);
+            }
+
+            return id2 + 1;
+
+
+        } catch (Exception ex) {
+            return -1;
+
+
+        } finally {
+            try {
+                resultSet.close();
+                statement.close();
+                connection.close();
+            } catch (Exception e) {
+
+            }
+            return id2+1;
+
+        }
+
+    }
+
+
+
+
+
 
     public static void add(Emp s) {
 

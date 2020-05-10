@@ -2,15 +2,15 @@ package entity;
 
 public class Salary_detail {
 
-    private  double fixed_salary;
+    private  double fixed_salary=100d;
     private  double sales_commission;
-    private  double hour_rate;
+    private  double hour_rate=500;
 
     private  double salary_holded;
-    private  double due;
+    private  double due=0d;
     private String account_number;
     private String  postal_address;
-    private  int default_payment_mode;
+    private  int default_payment_mode=0;
 
     @Override
     public String toString() {
@@ -35,6 +35,10 @@ public class Salary_detail {
         this.account_number = account_number;
         this.postal_address = postal_address;
         this.default_payment_mode = default_payment_mode;
+    }
+    public  Salary_detail()
+    {
+
     }
 
 

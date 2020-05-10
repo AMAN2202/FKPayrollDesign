@@ -1,19 +1,25 @@
 package entity;
 
-import java.util.Date;
-
 public class Emp {
 
     private int id;
-    private  String email;
+    private String email;
     private boolean active;
     private char gender;
     private String post;
 
-
-
     public Emp() {
-        this.active=true;
+        this.active = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "email='" + email + '\'' +
+                ", active=" + active +
+                ", gender=" + gender +
+                ", post='" + post + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -23,9 +29,6 @@ public class Emp {
     public void setId(int id) {
         this.id = id;
     }
-
-
-
 
 
     public boolean isActive() {
@@ -59,4 +62,6 @@ public class Emp {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }
