@@ -15,6 +15,14 @@ public class Union_detail {
         this.charges = charges;
     }
 
+    @Override
+    public String toString() {
+        return "Union_detail{" +
+                "union_member=" + union_member +
+                ", charges=" + charges.get(0) +" "+charges.get(1)+
+                '}';
+    }
+
     public boolean isUnion_member() {
         return union_member;
     }

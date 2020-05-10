@@ -12,6 +12,15 @@ public class Personal_detail {
         this.phoneno = phoneno;
     }
 
+    @Override
+    public String toString() {
+        return "Personal_detail{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneno='" + phoneno + '\'' +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

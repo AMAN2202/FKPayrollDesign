@@ -1,50 +1,62 @@
 package entity;
 
+import java.util.Date;
+
 public class Emp {
-    private static int lastid = 0;
+
     private int id;
-    Personal_detail Personal_detail;
-    Union_detail Union_detail;
-    Salary_detail Salary_detail;
-
-
-
+    private  String email;
+    private boolean active;
+    private char gender;
+    private String post;
 
 
 
     public Emp() {
-
+        this.active=true;
     }
 
-    public Emp(Personal_detail Personal_detail, Union_detail Union_Detail, Salary_detail Salary_detail) {
-        this.id=lastid+1;
-        this.Personal_detail = Personal_detail;
-        this.Union_detail = Union_Detail;
-        this.Salary_detail = Salary_detail;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 
-    public Personal_detail getPersonal_detail() {
-        return Personal_detail;
+
+
+
+    public boolean isActive() {
+        return active;
     }
 
-    public void setPersonal_detail(Personal_detail Personal_Detail) {
-        this.Personal_detail = Personal_Detail;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
-    public Union_detail getUnion_detail() {
-        return Union_detail;
+    public char getGender() {
+        return gender;
     }
 
-    public void setUnion_detail(Union_detail Union_Detail) {
-        this.Union_detail = Union_Detail;
+    public void setGender(char gender) {
+        this.gender = gender;
     }
 
-    public Salary_detail getSalary_detail() {
-        return Salary_detail;
+    public String getPost() {
+        return post;
     }
 
-    public void setSalary_detail(Salary_detail Salary_Detail) {
-        this.Salary_detail = Salary_Detail;
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

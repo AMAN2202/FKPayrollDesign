@@ -12,6 +12,20 @@ public class Salary_detail {
     private String  postal_address;
     private  int default_payment_mode;
 
+    @Override
+    public String toString() {
+        return "Salary_detail{" +
+                "fixed_salary=" + fixed_salary +
+                ", sales_commission=" + sales_commission +
+                ", hour_rate=" + hour_rate +
+                ", salary_holded=" + salary_holded +
+                ", due=" + due +
+                ", account_number='" + account_number + '\'' +
+                ", postal_address='" + postal_address + '\'' +
+                ", default_payment_mode=" + default_payment_mode +
+                '}';
+    }
+
     public Salary_detail(double fixed_salary, double sales_commission, double hour_rate, double salary_holded, double due, String account_number, String postal_address, int default_payment_mode) {
         this.fixed_salary = fixed_salary;
         this.sales_commission = sales_commission;
