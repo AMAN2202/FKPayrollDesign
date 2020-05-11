@@ -56,9 +56,10 @@ public class DaoEmp {
     /**
      *
      * @return ArrayList<Emp>  all employee from database
+     * @param active
      */
 
-    public static List<Emp> get_all() {
+    public static List<Emp> get_all(int active) {
 
         String sql = "SELECT *  FROM Emp";
         List<Emp> list = get_Emp(sql);
@@ -228,11 +229,11 @@ public class DaoEmp {
 
 
     /**
-     *
+     * @param active 0/1 0 for inactive employee
      * @return ArrayList<Emp> all active employee from database
      */
-    public List<Emp> getall() {
-        String sql = "select * from Emp where active=1";
+    public List<Emp> getall(int active) {
+        String sql = String.format("select * from Emp where active=%d");
         return get_Emp(sql);
     }
 }

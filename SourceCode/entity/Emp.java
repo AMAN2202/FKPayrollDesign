@@ -11,6 +11,34 @@ public class Emp {
     private char gender;
     private String post;
 
+    public Personal_detail getPersonal_detail() {
+        return personal_detail;
+    }
+
+    public void setPersonal_detail(Personal_detail personal_detail) {
+        this.personal_detail = personal_detail;
+    }
+
+    public Salary_detail getSalary_detail() {
+        return salary_detail;
+    }
+
+    public void setSalary_detail(Salary_detail salary_detail) {
+        this.salary_detail = salary_detail;
+    }
+
+    public Union_detail getUnion_detail() {
+        return union_detail;
+    }
+
+    public void setUnion_detail(Union_detail union_detail) {
+        this.union_detail = union_detail;
+    }
+
+    private Personal_detail personal_detail;
+    private Salary_detail salary_detail;
+    private  Union_detail union_detail;
+
 
     public Emp() {
         this.active = true;
