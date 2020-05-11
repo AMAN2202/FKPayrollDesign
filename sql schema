@@ -1,0 +1,50 @@
+create table Personal_detail(
+name varchar(30) NOT NULL,
+address varchar(30) NOT NULL,
+phoneno varchar(10) NOT NULL
+id int NOT NULL);
+
+
+
+
+create table Salary_detail(
+	fixed_salary DOUBLE NOT NULL  ,
+    commission_sales DOUBLE NOT NULL,
+    hour_rate  DOUBLE NOT NULL,
+    salary_holded DOUBLE NOT NULL,
+    due DOUBLE NOT NULL,
+    account_number varchar(20),
+    postal_address varchar(20),
+    default_payment_mode int NOT NULL
+    id int NOT NULL
+);
+
+
+create table Union_detail(
+	id int NOT NULL,
+	union_member boolean NOT NULL,
+	registration_fee int NOT NULL,
+	other_fee int NOT NULL
+);
+
+
+create table Emp(
+	id int NOT NULL,
+	email email unique,
+	active boolean NOT NULL,
+	post varchar(20) NOT NULL ,
+	gender char NOT NULL,
+);
+
+create table Work_card(
+	date Date ,
+	hour Double,
+	id int
+	);
+
+
+create table Sales_card(
+	date Date ,
+	amount Double,
+	id int
+	);
